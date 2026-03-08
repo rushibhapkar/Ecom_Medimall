@@ -9,13 +9,24 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart, Check, ArrowLeft, Package, Shield, Truck } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 
+// --- ADDED FOR STATIC EXPORT ---
+// This function tells Next.js which product IDs to pre-render at build time
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+// -------------------------------
+
 export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { addToCart, cart } = useApp();
   const [isAdding, setIsAdding] = useState(false);
 
-  const product = products.find((p) => p.id === params.id);
+  // Safely get the ID from params
+  const productId = params?.id;
+  const product = products.find((p) => p.id === productId);
   const isInCart = cart.some((item) => item.id === product?.id);
 
   const relatedProducts = product
