@@ -1,9 +1,13 @@
 'use client';
 
+//C:\Users\ASUS\Desktop\Ecom_Medimall\app\page.tsx
+
 import SectionNav from '@/components/SectionNav';
 import ProductCard from '@/components/ProductCard';
 import ServiceCard from '@/components/ServiceCard';
 import { products, services } from '@/data/dummyData';
+import CategoriesSection from '@/components/CategoriesSection';
+
 import Link from 'next/link';
 import { ArrowRight, Shield, Truck, Clock, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,19 +23,20 @@ export default function Home() {
   return (
     <>
       <SectionNav />
+<CategoriesSection />
 
       <div className="bg-gradient-to-br from-blue-50 to-teal-50 py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="mb-4 text-4xl font-bold text-[#174dB2] md:text-5xl lg:text-6xl">
+            {/* <h1 className="mb-4 text-4xl font-bold text-[#174dB2] md:text-5xl lg:text-6xl">
               Welcome to MEDIMALL
             </h1>
             {/* <p className="mb-8 text-xl text-gray-700 md:text-2xl">
               Dr. Jeswani&apos;s Divine Care
-            </p> */}
+            </p> 
             <p className="mx-auto mb-12 max-w-2xl text-lg text-gray-600">
               Your trusted healthcare partner delivering quality medicines, diagnostic services, and medical equipment right to your doorstep.
-            </p>
+            </p> */}
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {[

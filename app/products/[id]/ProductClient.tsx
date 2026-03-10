@@ -1,32 +1,24 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { Product } from '@/context/AppContext';
 import { products } from '@/data/dummyData';
 import { useApp } from '@/context/AppContext';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, Check, ArrowLeft, Package, Shield, Truck } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 
-// --- ADDED FOR STATIC EXPORT ---
-// This function tells Next.js which product IDs to pre-render at build time
-export async function generateStaticParams() {
-  return products.map((product) => ({
-    id: product.id,
-  }));
+interface Props {
+  product: Product | null;
 }
-// -------------------------------
 
-export default function ProductDetailPage() {
-  const params = useParams();
+export default function ProductClient({ product }: Props) {
   const router = useRouter();
   const { addToCart, cart } = useApp();
   const [isAdding, setIsAdding] = useState(false);
 
-  // Safely get the ID from params
-  const productId = params?.id;
-  const product = products.find((p) => p.id === productId);
   const isInCart = cart.some((item) => item.id === product?.id);
 
   const relatedProducts = product
@@ -66,6 +58,7 @@ export default function ProductDetailPage() {
         </Button>
 
         <div className="grid gap-8 lg:grid-cols-2">
+          {/* Product Image */}
           <div className="relative overflow-hidden rounded-2xl bg-white p-8">
             {product.discount > 0 && (
               <div className="absolute right-4 top-4 z-10 rounded-full bg-red-500 px-4 py-2 text-sm font-bold text-white shadow-lg">
@@ -84,6 +77,7 @@ export default function ProductDetailPage() {
             </div>
           </div>
 
+          {/* Product Details */}
           <div className="rounded-2xl bg-white p-8">
             <div className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-[#174dB2]">
               {product.category === 'medicines' && 'Medicine'}
