@@ -8,22 +8,18 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MEDIMALL - Dr. Jeswani\'s Divine Care | Online Medical Store',
-  description: 'Your trusted online medical store for medicines, lab tests, medical equipment, home healthcare services, and vaccinations. Quality healthcare at your doorstep.',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+  ),
+  title: "MEDIMALL - Dr. Jeswani's Divine Care | Online Medical Store",
+  description:
+    'Your trusted online medical store for medicines, lab tests, medical equipment, home healthcare services, and vaccinations. Quality healthcare at your doorstep.',
   openGraph: {
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
+    images: [{ url: '/og-image.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://bolt.new/static/og_default.png',
-      },
-    ],
+    images: [{ url: '/og-image.png' }],
   },
 };
 

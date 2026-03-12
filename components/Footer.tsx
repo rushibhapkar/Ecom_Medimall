@@ -113,7 +113,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-gray-700 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} MEDIMALL - Dr. Jeswani&apos;s Divine Care. All rights reserved.
+            &copy; {new Date().getFullYear()} MEDIMALL - Divine Care. All rights reserved.
           </p>
         </div>
       </div>
