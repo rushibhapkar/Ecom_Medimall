@@ -132,14 +132,14 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_2px_16px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(23,77,178,0.15)]">
 
         {/* Discount badge */}
-        {product.discount > 0 && (
-          <div className="absolute left-3 top-3 z-10 flex items-center gap-1 rounded-full bg-gradient-to-r from-red-500 to-orange-400 px-2.5 py-1 shadow-lg">
-            <Zap className="h-3 w-3 fill-white text-white" />
-            <span className="text-[11px] font-extrabold tracking-wide text-white">
-              {product.discount}% OFF
-            </span>
-          </div>
-        )}
+{product.discount > 0 && (
+  <div className="absolute left-3 top-3 z-30 flex items-center gap-1 rounded-full bg-gradient-to-r from-red-500 to-orange-400 px-2.5 py-1 shadow-lg">
+    <Zap className="h-3 w-3 fill-white text-white" />
+    <span className="text-[11px] font-extrabold tracking-wide text-white">
+      {product.discount}% OFF
+    </span>
+  </div>
+)}
 
         {/* Image container */}
         <div className="relative h-52 w-full overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50">
