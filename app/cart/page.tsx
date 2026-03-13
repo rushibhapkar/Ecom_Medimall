@@ -233,34 +233,34 @@ export default function CartPage() {
               </div>
 
               <AlertDialog>
-  <AlertDialogTrigger asChild>
-    <Button className="w-full bg-gradient-to-r from-[#174dB2] to-teal-500 py-6 text-lg hover:from-[#174dB2] hover:to-teal-600">
-      Place Order
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Button>
-  </AlertDialogTrigger>
+                <AlertDialogTrigger asChild>
+                  <Button className="w-full bg-gradient-to-r from-[#174dB2] to-teal-500 py-6 text-lg hover:from-[#174dB2] hover:to-teal-600">
+                    Place Order
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </AlertDialogTrigger>
 
-  <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Confirm Order</AlertDialogTitle>
-      <AlertDialogDescription>
-        Your order details will be sent to WhatsApp for confirmation.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Confirm Order</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      Your order details will be sent to WhatsApp for confirmation.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
 
-    <AlertDialogFooter>
-      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
 
-      <AlertDialogAction
-        onClick={handlePlaceOrder}
-        className="bg-[#174dB2] hover:bg-[#123a85]"
-      >
-        Confirm Order
-      </AlertDialogAction>
+                    <AlertDialogAction
+                      onClick={handlePlaceOrder}
+                      className="bg-[#174dB2] hover:bg-[#123a85]"
+                    >
+                      Confirm Order
+                    </AlertDialogAction>
 
-    </AlertDialogFooter>
-  </AlertDialogContent>
-</AlertDialog>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
 
               <div className="mt-6 space-y-2 text-xs text-gray-500">
                 <div className="flex items-center gap-2">
@@ -280,14 +280,18 @@ export default function CartPage() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <Link href="/products">
-            <Button className="w-full bg-gradient-to-r from-[#174dB2] to-teal-500 py-6 text-lg hover:from-[#174dB2] hover:to-teal-600">
-              Proceed to Checkout
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
+        <div className="mt-8 flex justify-center">
+  <Link href="/products">
+    <Button className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#174dB2] to-teal-500 px-10 py-6 text-lg font-semibold text-white shadow-lg shadow-teal-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/40">
+      <span className="relative z-10 flex items-center gap-2">
+        Continue Shopping
+        <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+      </span>
+      {/* Shine sweep effect */}
+      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+    </Button>
+  </Link>
+</div>
       </div>
     </div>
   );

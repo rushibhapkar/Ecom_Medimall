@@ -75,6 +75,8 @@
 @layer base {
   * {
     @apply border-border;
+        -webkit-tap-highlight-color: transparent;  /* ← ADD THIS */
+
   }
   body {
     @apply bg-background text-foreground;
